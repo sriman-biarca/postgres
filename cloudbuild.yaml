@@ -8,7 +8,7 @@ steps:
   args: ['install']
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/spring-boot', '.']
-- name: 'gcr.io/standf-188123/github-memanikantan-source_clear_mvn:75476e8804d0f7d73c1ddef306acd9ef1a2165fd'
+- name: 'gcr.io/standf-188123/github-memanikantan-source_clear_mvn:9f64a57eaf51785cc9371764e5bc80a067bce867'
   secretEnv: ['SRCCLR_API_TOKEN']
 
 
