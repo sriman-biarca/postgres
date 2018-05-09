@@ -9,6 +9,6 @@ steps:
   waitFor: ['-']
 - name: 'jbergknoff/postgresql-client'
   #entrypoint: 'bash'
-  args: ['-U', 'postgres', '-W', 'test1234', '-h', '$ip', '-c', 'create user test with password "test";']
+  args: ['-U', 'postgres', '-W', 'test1234', '-h', '`echo $IP`', '-c', 'create user test with password "test";']
   id: B
   waitFor: ['A']
