@@ -3,7 +3,8 @@ steps:
 - name: 'postgres'
   env: ['POSTGRES_PASSWORD=test1234']
   entrypoint: 'bash'
-  args: ['bash', 'workspace/postgres.sh']
+  #args: ['bash', 'workspace/postgres.sh']
+  args: ['ls -la']
   id: A
   waitFor: ['-']
 - name: 'jbergknoff/postgresql-client'
