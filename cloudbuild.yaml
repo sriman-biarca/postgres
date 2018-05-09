@@ -7,9 +7,10 @@ steps:
   #args: ['postgres.sh']
   id: A
   waitFor: ['-']
+  timeout: 20s
 - name: 'jbergknoff/postgresql-client'
   env: ["IP=/workspace/ip.txt"]
   #entrypoint: 'bash'
   args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
   id: B
-  #waitFor: ['20s']
+  waitFor: ['A']
