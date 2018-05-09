@@ -9,6 +9,6 @@ steps:
   waitFor: ['-']
 - name: 'jbergknoff/postgresql-client'
   entrypoint: 'bash'
-  args: ['bash', 'client.sh']
+  args: ['client.sh']
   id: B
   waitFor: ['A']
