@@ -1,9 +1,11 @@
 steps:
 - name: 'postgres'
+  env: 'POSTGRES_PASSWORD=mysecretpassword'
   args: ['bash', 'script1.sh']
   id: A
   waitFor: ['-']
-- name: 'ubuntu'
-  args: ['bash', 'script2.sh']
+- name: ' jbergknoff/postgresql-client'
+  args: ['-u', 'script2.sh']
+  env: 'POSTGRES_PASSWORD=mysecretpassword'
   id: B
   waitFor: ['-']
