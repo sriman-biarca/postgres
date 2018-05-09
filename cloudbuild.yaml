@@ -4,7 +4,7 @@ steps:
   args: ['bash', 'script1.sh']
   id: A
   waitFor: ['-']
-- name: ' jbergknoff/postgresql-client'
+- name: 'jbergknoff/postgresql-client'
   args: ['bash', 'script2.sh']
   id: B
   waitFor: ['-']
