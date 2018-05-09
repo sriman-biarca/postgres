@@ -2,12 +2,12 @@ steps:
 #- name: 'sriman-biarca/postgres-1'
 - name: 'postgres'
   env: ['POSTGRES_PASSWORD=test1234']
-  args: ['bash', 'postgres.sh']
   entrypoint: 'bash'
+  args: ['bash', 'postgres.sh']
   id: A
   waitFor: ['-']
 - name: 'jbergknoff/postgresql-client'
-  args: ['bash', 'client.sh']
   entrypoint: 'bash'
+  args: ['bash', 'client.sh']
   id: B
   waitFor: ['A']
