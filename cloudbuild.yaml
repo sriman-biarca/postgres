@@ -10,6 +10,6 @@ steps:
 - name: 'jbergknoff/postgresql-client'
   env: ["IP=/workspace/ip.txt"]
   #entrypoint: 'bash'
-  args: ['-U', 'postgres', '-W', 'test1234', '-h', $IP, '-c', 'create user test with password "test";']
+  args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
   id: B
-  waitFor: ['-']
+  waitFor: ['20s']
