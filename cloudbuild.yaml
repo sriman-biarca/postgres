@@ -6,6 +6,6 @@ steps:
   waitFor: ['-']
 - name: ' jbergknoff/postgresql-client'
   args: ['-u', 'script2.sh']
-  env: 'POSTGRES_PASSWORD=mysecretpassword'
+  env: 'POSTGRES_PASSWORD=test1234'
   id: B
   waitFor: ['-']
