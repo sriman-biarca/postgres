@@ -12,4 +12,4 @@ steps:
   #entrypoint: 'bash'
   args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
   id: B
-  waitFor: ['A']
+  waitFor: ['-']
