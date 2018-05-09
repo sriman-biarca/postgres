@@ -1,7 +1,7 @@
-hostname
-ip=`hostname -I`
-
 ls -l /workspace
-echo $ip > /workspace/ip.txt
-export ip=$ip
+echo "IP=`hostname -I`" > /workspace/ip.txt
+
+
 cat /workspace/ip.txt
+source /workspace/ip.txt
+echo $IP
