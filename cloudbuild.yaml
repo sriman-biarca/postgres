@@ -1,6 +1,6 @@
 steps:
 - name: 'postgres'
-  env: 'POSTGRES_PASSWORD=test1234'
+  env: ['POSTGRES_PASSWORD=test1234']
   args: ['bash', 'script1.sh']
   id: A
   waitFor: ['-']
