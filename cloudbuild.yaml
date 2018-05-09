@@ -1,5 +1,5 @@
 steps:
-- name: 'postgres'
+- name: 'sriman-biarca/postgres-1'
   env: ['POSTGRES_PASSWORD=test1234']
   args: ['bash', 'postgres.sh']
   id: A
