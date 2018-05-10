@@ -1,14 +1,37 @@
-ls -l /workspace
-echo "IP=`hostname -I`" > /workspace/ip.txt
+#!/bin/bash
 
+PG_VERSION=10
+PG_CONF="/etc/postgresql/$PG_VERSION/main/postgresql.conf"
+PG_HBA="/etc/postgresql/$PG_VERSION/main/pg_hba.conf"
 
-cat /workspace/ip.txt
-source /workspace/ip.txt
-echo $IP
+# Update package list and upgrade all packages
+sudo apt update
+sudo apt -y upgrade
 
-echo "service test"
+sudo apt -y install libpq-dev # For building ruby 'pg' gem
+sudo apt -y install pgadmin3
+
+wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
+
 sudo apt-get update
-sudo apt-get install postgresql postgresql-contrib
+sudo apt-get install -y postgresql-$PG_VERSION postgresql-contrib-$PG_VERSION postgresql-client-$PG_VERSION
 
-#sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
-sudo service postgresql status
+# Edit postgresql.conf to change listen address to '*':
+sudo sed -i "s/#listen_addresses = 'localhost'/listen_addresses = '*'/" "$PG_CONF"
+
+# Append to pg_hba.conf to add password auth:
+#sudo echo "host    all             all             all                     md5" >> "$PG_HBA"
+echo "host    all             all             all                     md5" |  sudo tee -a "$PG_HBA"
+
+# Explicitly set default client_encoding
+#sudo echo "client_encoding = utf8" >> "$PG_CONF"
+echo "client_encoding = utf8" |  sudo tee -a "$PG_CONF"
+
+sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+
+# Restart so that all new config is loaded:
+sudo service postgresql stop
+sudo service postgresql start
+
+sudo update-rc.d postgresql enable
