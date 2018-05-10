@@ -1,6 +1,6 @@
 steps:
-- name: 'sriman-biarca/postgres-1'
-#- name: 'ubuntu'
+#- name: 'sriman-biarca/postgres-1'
+- name: 'gcr.io/spinnaker-terraform/postgres'
   #env: ['POSTGRES_PASSWORD=test1234']
   entrypoint: 'bash'
   #args: ['bash', 'workspace/postgres.sh']
