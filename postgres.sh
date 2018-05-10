@@ -8,6 +8,13 @@ PG_HBA="/etc/postgresql/$PG_VERSION/main/pg_hba.conf"
 sudo apt update
 sudo apt -y upgrade
 
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install y-ppa-manager
+
+sudo apt update
+sudo apt -y upgrade
+
 sudo apt -y install libpq-dev # For building ruby 'pg' gem
 sudo apt -y install pgadmin3
 
