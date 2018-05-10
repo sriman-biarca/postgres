@@ -4,17 +4,17 @@ source /workspace/ip.txt
 echo $IP
 
 PG_VERSION=10
-sudo add-apt-repository ppa:webupd8team/y-ppa-manager
-sudo apt-get update
-sudo apt-get install y-ppa-manager
 # Update package list and upgrade all packages
-sudo apt update
-sudo apt -y upgrade
+sudo apt-get update
+sudo apt-get -y upgrade
 
-
+sudo apt-get install wget -y
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
 sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" >> /etc/apt/sources.list.d/pgdg.list'
 
+sudo apt-get update
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 7FCC7D46ACCC4CF8
 sudo apt-get update
 sudo apt-get install -y postgresql-client-$PG_VERSION
 
