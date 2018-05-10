@@ -10,6 +10,7 @@ echo "host    all             all             0.0.0.0/0                    trust
 sudo service postgresql restart
 
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+PGPASSWORD=postgres psql -U postgres -h 192.168.10.2 -c "create user test with password 'test';"
 
 
 
