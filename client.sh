@@ -4,7 +4,9 @@ source /workspace/ip.txt
 echo $IP
 
 PG_VERSION=10
-
+sudo add-apt-repository ppa:webupd8team/y-ppa-manager
+sudo apt-get update
+sudo apt-get install y-ppa-manager
 # Update package list and upgrade all packages
 sudo apt update
 sudo apt -y upgrade
