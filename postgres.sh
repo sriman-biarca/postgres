@@ -35,3 +35,11 @@ sudo service postgresql stop
 sudo service postgresql start
 
 sudo update-rc.d postgresql enable
+
+ls -l /workspace
+echo "IP=`hostname -I`" > /workspace/ip.txt
+
+
+cat /workspace/ip.txt
+source /workspace/ip.txt
+echo $IP
