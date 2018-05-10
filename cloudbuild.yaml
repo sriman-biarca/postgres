@@ -7,7 +7,6 @@ steps:
   args: ['postgres.sh']
   id: A
   waitFor: ['-']
-  timeout: 120s
   
 #- name: 'jbergknoff/postgresql-client'
 #- name: 'ubuntu:trusty'
