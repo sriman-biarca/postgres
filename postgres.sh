@@ -31,10 +31,7 @@ echo "client_encoding = utf8" |  sudo tee -a "$PG_CONF"
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 
 # Restart so that all new config is loaded:
-sudo service postgresql stop
-sudo service postgresql start
-
-sudo update-rc.d postgresql enable
+sudo service postgresql restart
 
 ls -l /workspace
 echo "IP=`hostname -I`" > /workspace/ip.txt
