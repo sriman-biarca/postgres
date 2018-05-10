@@ -14,4 +14,4 @@ steps:
   #args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
   args: ['client.sh']
   id: B
-  waitFor: ['-']
+  waitFor: ['A']
