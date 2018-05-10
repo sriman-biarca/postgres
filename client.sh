@@ -3,6 +3,8 @@
 source /workspace/ip.txt
 echo $IP
 
+ping $IP -c 4 
+
 sudo chown -R postgres:postgres /var/lib/postgresql/10/
 sudo chmod -R u=rwX,go= /var/lib/postgresql/10/
 
