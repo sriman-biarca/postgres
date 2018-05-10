@@ -10,10 +10,6 @@ echo "host    all             all             0.0.0.0/0                    trust
 sudo service postgresql restart
 
 sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
-PGPASSWORD=postgres psql -U postgres -h 192.168.10.2 -c "create user test with password 'test';"
-
-
-
 
 ls -l /workspace
 echo "IP=`hostname -I`" > /workspace/ip.txt
@@ -23,4 +19,5 @@ cat /workspace/ip.txt
 source /workspace/ip.txt
 echo $IP
 
+PGPASSWORD=postgres psql -U postgres -h $IP -c "create user test with password 'test';"
 ping $IP
