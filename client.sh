@@ -1,6 +1,4 @@
-cat /workspace/ip.txt
-ip=`cat /workspace/ip.txt`
-echo $ip
-for i in {0..15}; do echo  "$i"_script2; sleep 1; done; echo
+source /workspace/ip.txt
+echo $IP
 
-psql -U postgres -W test1234 -h $ip -c "create user test with password 'test';"
+PG_PASSWORD=postgres psql -U postgres -h $IP -c "create user test with password 'test';"
