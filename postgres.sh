@@ -9,7 +9,7 @@ echo "host    all             all             0.0.0.0/0                    trust
 # Restart so that all new config is loaded:
 sudo service postgresql restart
 
-sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+#sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 
 
 
