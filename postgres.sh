@@ -8,7 +8,7 @@ PG_HBA="/etc/postgresql/$PG_VERSION/main/pg_hba.conf"
 sudo apt update
 sudo apt -y upgrade
 
-sudo apt -y install libpq-dev # For building ruby 'pg' gem
+sudo apt -y install libpq-dev wget# For building ruby 'pg' gem
 sudo apt -y install pgadmin3
 
 wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key add -
