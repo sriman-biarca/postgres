@@ -3,6 +3,8 @@
 source /workspace/ip.txt
 echo $IP
 
+hostname -I
+
 ping $IP -c 4 
 
 sudo chown -R postgres:postgres /var/lib/postgresql/10/
