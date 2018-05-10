@@ -20,4 +20,4 @@ source /workspace/ip.txt
 echo $IP
 
 PGPASSWORD=postgres psql -U postgres -h $IP -c "create user test with password 'test';"
-ping $IP
+sleep 120
