@@ -10,5 +10,5 @@ echo "service test"
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib
 
-sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
+#sudo -u postgres psql -c "ALTER USER postgres WITH PASSWORD 'postgres';"
 sudo service postgresql status
