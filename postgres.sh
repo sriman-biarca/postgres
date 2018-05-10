@@ -3,7 +3,9 @@ PG_VERSION=10
 sudo chown -R postgres:postgres /var/lib/postgresql/10/
 sudo chmod -R u=rwX,go= /var/lib/postgresql/10/
 
-ls -la /var/lib/postgresql/10/
+ls -la /var/lib/postgresql/10/main/
+
+sudo cat /var/lib/postgresql/10/main/pg_hba.conf
 
 echo "host    all             all             0.0.0.0/0                    md5" |  sudo tee -a "/etc/postgresql/$PG_VERSION/main/pg_hba.conf"
 
