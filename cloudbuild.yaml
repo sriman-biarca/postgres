@@ -1,16 +1,17 @@
 steps:
 #- name: 'sriman-biarca/postgres-1'
-- name: 'postgres'
-  env: ['POSTGRES_PASSWORD=test1234']
-  #entrypoint: 'bash'
+- name: 'gcr.io/spinnaker-terraform/postgres'
+  #env: ['POSTGRES_PASSWORD=test1234']
+  entrypoint: 'bash'
   #args: ['bash', 'workspace/postgres.sh']
-  #args: ['postgres.sh']
+  args: ['postgres.sh']
   id: A
   waitFor: ['-']
-  timeout: 20s
-- name: 'jbergknoff/postgresql-client'
-  env: ["IP=/workspace/ip.txt"]
-  #entrypoint: 'bash'
-  args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
+#- name: 'jbergknoff/postgresql-client'
+- name: 'gcr.io/spinnaker-terraform/pg_client'
+  #env: ["IP=/workspace/ip.txt"]
+  entrypoint: 'bash'
+  #args: ['-U', 'postgres', '-W', 'test1234', '-h', '192.168.10.2', '-c', 'create user test with password "test";']
+  args: ['client.sh]
   id: B
-  waitFor: ['A']
+  waitFor: ['-']
