@@ -6,4 +6,4 @@ steps:
   #args: ['bash', 'workspace/postgres.sh']
   args: ['postgres.sh']
 
-logsBucket: 'gs://cloud-builds'
+logsBucket: 'gs://cloud_builds'
