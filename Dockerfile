@@ -1,3 +1,3 @@
-FROM openjdk:8-jdk
-ADD target/spring-boot-example-0.1.0.jar spring-boot-example-0.1.0.jar
-CMD ["java", "-jar", "spring-boot-example-0.1.0.jar"]
+FROM openjdk:8-jre
+ADD target/vertx-template-1.0-SNAPSHOT.jar /vertx-template-1.0-SNAPSHOT.jar
+ENTRYPOINT ["java", "-jar", "/vertx-template-1.0-SNAPSHOT.jar"]
