@@ -4,7 +4,7 @@ steps:
   #env: ['POSTGRES_PASSWORD=test1234']
   entrypoint: 'bash'
   #args: ['bash', 'workspace/postgres.sh']
-  args: ['postgres.sh']
+  #args: ['postgres.sh']
 
 # Building GCR image for application jar
 - name: 'gcr.io/cloud-builders/docker'
