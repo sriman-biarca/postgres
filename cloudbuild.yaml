@@ -11,7 +11,7 @@ steps:
   args: ['build', '-t', 'gcr.io/$PROJECT_ID/postgres:latest', '-f', 'Dockerfile', '.']
 
 
-logsBucket: 'gs://cloud_builds'
+#logsBucket: 'gs://cloud_builds'
 
 #
 # Uploading GCR images for application jar
