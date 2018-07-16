@@ -1,7 +1,7 @@
 steps:
 # Building GCR image for application jar
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/pg:latest', '-f', 'Dockerfile', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/pg1:latest', '-f', 'Dockerfile', '.']
 
 
 #logsBucket: 'gs://cloud_builds'
@@ -10,7 +10,7 @@ steps:
 # Uploading GCR images for application jar
 #
 images:
-  - 'gcr.io/$PROJECT_ID/pg:latest'
+  - 'gcr.io/$PROJECT_ID/pg1:latest'
 
 # Build timeout
 timeout: 1800s
