@@ -1,3 +1,4 @@
+#test
 steps:
 # Building GCR image for application jar
 - name: 'gcr.io/cloud-builders/docker'
